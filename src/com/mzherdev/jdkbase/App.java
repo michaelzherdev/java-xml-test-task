@@ -28,6 +28,8 @@ public class App {
             baseClass.createXmlOne();
             Path path = baseClass.createXmlTwo();
             sum = baseClass.parseXml(path);
+            if(baseClass.getConnection() != null)
+                baseClass.getConnection().close();
         } catch (IOException | SAXException | SQLException | ParserConfigurationException | TransformerException e) {
             e.printStackTrace();
         }
